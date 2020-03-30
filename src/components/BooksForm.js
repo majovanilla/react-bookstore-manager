@@ -6,6 +6,7 @@ import { createBook } from '../actions';
 const generateID = () => Math.trunc(Math.random() * 10 ** 9).toString();
 
 const categories = [
+  '',
   'Action',
   'Biography',
   'History',
@@ -24,6 +25,14 @@ class BooksForm extends React.Component {
       category: '',
     };
 
+    this.reset = () => {
+      this.setState({
+        id: generateID(),
+        title: '',
+        category: '',
+      });
+    };
+
     this.handleChange = event => {
       const { value } = event.target;
 
@@ -39,9 +48,15 @@ class BooksForm extends React.Component {
     this.handleSubmit = event => {
       event.preventDefault();
       const { id, title, category } = this.state;
+
+      const emptyRegex = /^\s*$/;
+      if (title.match(emptyRegex) || category.match(emptyRegex)) {
+        return;
+      }
+
       const { createBook } = this.props;
       createBook({ id, title, category });
-      this.setState({ id: generateID(), title: '', category: '' });
+      this.reset();
     };
   }
 
@@ -57,9 +72,8 @@ class BooksForm extends React.Component {
         </label>
         <label htmlFor="category">
           Category
-          {category}
           :
-          <select name="category" onChange={this.handleChange}>
+          <select name="category" onChange={this.handleChange} >
             {
               categories.map((category, index) => {
                 const categoryKey = `CATEGORY_${index}`;

@@ -61,7 +61,7 @@ class BooksForm extends React.Component {
   }
 
   render() {
-    const { id, title, category } = this.state;
+    const { id, title } = this.state;
     return (
       <form>
         <h2>Book Form</h2>
@@ -73,7 +73,7 @@ class BooksForm extends React.Component {
         <label htmlFor="category">
           Category
           :
-          <select name="category" onChange={this.handleChange} >
+          <select name="category" onChange={this.handleChange}>
             {
               categories.map((category, index) => {
                 const categoryKey = `CATEGORY_${index}`;

@@ -7,16 +7,19 @@ const bookReducerFactory = initialState => (state = initialState, action) => {
         category: action.category,
       };
 
-      const nextBooks = { ...state };
+      const nextBooks = { ...state.books }
       nextBooks[action.id] = book;
 
-      return nextBooks;
+      const nextState = { ...state, books: nextBooks };
+      return nextState;
     }
 
     case 'REMOVE_BOOK': {
-      const nextBooks = { ...state };
+      const nextBooks = { ...state.books };
       delete nextBooks[action.id];
-      return nextBooks;
+
+      const nextState = { ...state, books: nextBooks };
+      return nextState;
     }
 
     default:

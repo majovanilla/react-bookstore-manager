@@ -24,8 +24,5 @@ const BooksList = ({ books }) => (
 
 const mapStateToProps = state => ({ books: state });
 
-// BooksList.propTypes = {
-//   books: PropTypes.object.isRequired,
-// };
 
 export default connect(mapStateToProps)(BooksList);

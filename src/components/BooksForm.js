@@ -57,13 +57,14 @@ class BooksForm extends React.Component {
       const { createBook } = this.props;
       createBook({ id, title, category });
       this.reset();
+      event.target.reset();
     };
   }
 
   render() {
     const { id, title } = this.state;
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <h2>Book Form</h2>
         <input type="hidden" name="id" value={id} />
         <label htmlFor="title">
@@ -87,7 +88,7 @@ class BooksForm extends React.Component {
             }
           </select>
         </label>
-        <button type="submit" onClick={this.handleSubmit}>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     );
   }

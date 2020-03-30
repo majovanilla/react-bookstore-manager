@@ -9,21 +9,24 @@ import App from './components/App';
 import bookReducerFactory from './reducers/books';
 
 const initialState = {
-  1: {
-    id: '1',
-    title: 'Learning Physics',
-    category: 'Learning',
+  books: {
+    1: {
+      id: '1',
+      title: 'Learning Physics',
+      category: 'Learning',
+    },
+    2: {
+      id: '2',
+      title: 'Believers',
+      category: 'Action',
+    },
+    3: {
+      id: '3',
+      title: 'Moby Dick',
+      category: 'Sci-Fi',
+    },
   },
-  2: {
-    id: '2',
-    title: 'Believers',
-    category: 'Action',
-  },
-  3: {
-    id: '3',
-    title: 'Moby Dick',
-    category: 'Sci-Fi',
-  },
+  filter: 'All',
 };
 
 const bookReducer = bookReducerFactory(initialState);

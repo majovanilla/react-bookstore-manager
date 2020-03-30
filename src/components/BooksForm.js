@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropType from 'prop-types';
 import { createBook } from '../actions';
 
-const generateID = () => Math.trunc(Math.random() * 10 ** 9).toString();
+const generateID = () => Math.trunc(Math.random() * 100000000).toString();
 
 const categories = [
   '',

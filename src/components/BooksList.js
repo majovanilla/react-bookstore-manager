@@ -3,17 +3,23 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropType from 'prop-types';
 import Book from './Book';
-import { removeBook } from '../actions/index';
+import { removeBook, changeFilter } from '../actions/index';
 import CategoryFilter from './CategoryFilter';
 
 // eslint-disable-next-line react/prop-types
 const BooksList = props => {
+  const { books, filter, removeBook, changeFilter } = props;
 
-  const handleFilterChange = () => {
-
+  const handleFilterChange = value => {
+    changeFilter(value);
   };
 
-  const { books, removeBook } = props;
+  const filterBooks = (array, value) {
+    return {
+      array.filter(book => book.category === value)
+    }
+  }
+
   return (
     <div>
       <CategoryFilter handleFilterChange={handleFilterChange} />
@@ -42,18 +48,23 @@ const BooksList = props => {
   );
 };
 
-const mapStateToProps = state => ({ books: state.books });
+const mapStateToProps = state => ({ books: state.books, filter: state.filter });
 
 const mapDispatchToProps = dispatch => ({
   removeBook: id => {
     dispatch(removeBook(id));
+  },
+  changeFilter: filter => {
+    dispatch(changeFilter(filter));
   },
 });
 
 BooksList.propTypes = {
   // eslint-disable-next-line no-undef
   books: PropType.object.isRequired,
+  filter: PropType.string.isRequired,
   removeBook: PropType.func.isRequired,
+  changeFilter: PropType.func.isRequired,
 };
 
 

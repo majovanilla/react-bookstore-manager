@@ -1,28 +1,22 @@
 import React from 'react';
-import Redux from 'redux';
-import 
+import { connect } from 'redux';
 
-const BooksList = () => {
+const BooksList = () => (
+  <table>
+    <thead>
+      <tr>
+        <th>Book ID</th>
+      </tr>
+      <tr>
+        <th>Title</th>
+      </tr>
+      <tr>
+        <th>Category</th>
+      </tr>
+    </thead>
+  </table>
+);
 
-  const mapStateToProps = (state) => {
-    books: state.books
-  }
+const mapStateToProps = state => state.books;
 
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>Book ID</th>
-        </tr>
-        <tr>
-          <th>Title</th>
-        </tr>
-        <tr>
-          <th>Category</th>
-        </tr>
-      </thead>
-    </table>
-  );
-};
-
-export default BooksList;
+export default connect(mapStateToProps)(BooksList);

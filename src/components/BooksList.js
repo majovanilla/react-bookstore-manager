@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Book from './Book';
 
-const BooksList = () => (
+// eslint-disable-next-line react/prop-types
+const BooksList = ({ books }) => (
   <table>
     <thead>
       <tr>
@@ -14,9 +16,16 @@ const BooksList = () => (
         <th>Category</th>
       </tr>
     </thead>
+    <tbody>
+      {Object.values(books).map(book => <Book book={book} key={book.id} />)}
+    </tbody>
   </table>
 );
 
-const mapStateToProps = state => state.books;
+const mapStateToProps = state => ({ books: state });
+
+// BooksList.propTypes = {
+//   books: PropTypes.object.isRequired,
+// };
 
 export default connect(mapStateToProps)(BooksList);

@@ -1,12 +1,12 @@
-const bookReducerFactory = (initialState) => (state = initialState, action) => {
-  switch(action.type) {
+const bookReducerFactory = initialState => (state = initialState, action) => {
+  switch (action.type) {
     case 'CREATE_BOOK': {
       const book = {
         id: action.id,
         title: action.title,
         category: action.category,
       };
-      
+
       const nextBooks = { ...state };
       nextBooks[action.id] = book;
 

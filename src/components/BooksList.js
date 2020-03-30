@@ -8,10 +8,15 @@ import CategoryFilter from './CategoryFilter';
 
 // eslint-disable-next-line react/prop-types
 const BooksList = props => {
+
+  const handleFilterChange = () => {
+
+  };
+
   const { books, removeBook } = props;
   return (
     <div>
-      <CategoryFilter />
+      <CategoryFilter handleFilterChange={handleFilterChange} />
       <table>
         <thead>
           <tr>

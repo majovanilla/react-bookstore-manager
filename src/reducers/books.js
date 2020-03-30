@@ -1,4 +1,4 @@
-const bookReducerFactory = initialState => (state = initialState, action) => {
+const bookReducer = (state, action) => {
   switch (action.type) {
     case 'CREATE_BOOK': {
       const book = {
@@ -7,7 +7,7 @@ const bookReducerFactory = initialState => (state = initialState, action) => {
         category: action.category,
       };
 
-      const nextBooks = { ...state.books }
+      const nextBooks = { ...state.books };
       nextBooks[action.id] = book;
 
       const nextState = { ...state, books: nextBooks };
@@ -27,4 +27,4 @@ const bookReducerFactory = initialState => (state = initialState, action) => {
   }
 };
 
-export default bookReducerFactory;
+export default bookReducer;

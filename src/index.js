@@ -4,33 +4,9 @@ import { Provider } from 'react-redux';
 import './index.css';
 import { createStore } from 'redux';
 import App from './components/App';
+import rootReducer from './reducers/rootReducer';
 
-
-import bookReducerFactory from './reducers/books';
-
-const initialState = {
-  books: {
-    1: {
-      id: '1',
-      title: 'Learning Physics',
-      category: 'Learning',
-    },
-    2: {
-      id: '2',
-      title: 'Believers',
-      category: 'Action',
-    },
-    3: {
-      id: '3',
-      title: 'Moby Dick',
-      category: 'Sci-Fi',
-    },
-  },
-  filter: 'All',
-};
-
-const bookReducer = bookReducerFactory(initialState);
-const bookStore = createStore(bookReducer);
+const bookStore = createStore(rootReducer);
 
 ReactDOM.render(
   <React.StrictMode>

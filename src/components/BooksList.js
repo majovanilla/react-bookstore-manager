@@ -8,12 +8,9 @@ const BooksList = ({ books }) => (
     <thead>
       <tr>
         <th>Book ID</th>
-      </tr>
-      <tr>
         <th>Title</th>
-      </tr>
-      <tr>
         <th>Category</th>
+        <th>Remove Book?</th>
       </tr>
     </thead>
     <tbody>

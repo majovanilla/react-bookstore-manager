@@ -3,18 +3,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropType from 'prop-types';
 import Book from './Book';
-import { removeBook, changeFilter } from '../actions/index';
-import CategoryFilter from './CategoryFilter';
+import { removeBook } from '../actions/index';
 
 // eslint-disable-next-line react/prop-types
 const BooksList = props => {
   const {
-    books, filter, removeBook, changeFilter,
+    books, filter, removeBook,
   } = props;
-
-  const handleFilterChange = value => {
-    changeFilter(value);
-  };
 
   const filterBooks = () => {
     const booksArray = Object.values(books);
@@ -28,7 +23,6 @@ const BooksList = props => {
 
   return (
     <div>
-      <CategoryFilter handleFilterChange={handleFilterChange} />
       <table>
         <thead>
           <tr>
@@ -60,9 +54,6 @@ const mapDispatchToProps = dispatch => ({
   removeBook: id => {
     dispatch(removeBook(id));
   },
-  changeFilter: filter => {
-    dispatch(changeFilter(filter));
-  },
 });
 
 BooksList.propTypes = {
@@ -70,7 +61,6 @@ BooksList.propTypes = {
   books: PropType.object.isRequired,
   filter: PropType.string.isRequired,
   removeBook: PropType.func.isRequired,
-  changeFilter: PropType.func.isRequired,
 };
 
 

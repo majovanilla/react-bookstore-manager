@@ -14,10 +14,14 @@ const BooksList = props => {
     changeFilter(value);
   };
 
-  const filterBooks = (array, value) {
-    return {
-      array.filter(book => book.category === value)
+  const filterBooks = () => {
+    const booksArray = Object.values(books);
+
+    if (filter === 'All') {
+      return booksArray;
     }
+
+    return booksArray.filter(book => book.category === filter);
   }
 
   return (
@@ -33,7 +37,7 @@ const BooksList = props => {
           </tr>
         </thead>
         <tbody>
-          {Object.values(books).map(book => (
+          {filterBooks().map(book => (
             <Book
               id={book.id}
               title={book.title}

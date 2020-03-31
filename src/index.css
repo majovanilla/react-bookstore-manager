@@ -85,3 +85,21 @@ select {
 .category-selector {
   font-size: 1.5rem;
 }
+
+.books-form {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: white;
+}
+
+.books-form-row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.books-form-row > * {
+  margin-inline-start: 0.25em;
+  margin-inline-end: 0.25em;
+}

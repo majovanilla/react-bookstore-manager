@@ -6,12 +6,12 @@ const Book = props => {
     id, title, category, removeBook,
   } = props;
   return (
-    <tr>
-      <td>{id}</td>
-      <td>{title}</td>
-      <td>{category}</td>
+    <tr className="book-row">
+      <td className="book-id">{id}</td>
+      <td className="book-category">{category}</td>
+      <td className="book-title">{title}</td>
       <td>
-        <button type="submit" onClick={() => removeBook(id)}>Remove</button>
+        <button className="book-remove" type="submit" onClick={() => removeBook(id)}>Remove</button>
       </td>
     </tr>
   );

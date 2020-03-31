@@ -19,7 +19,7 @@ const initialState = {
       category: 'Sci-Fi',
     },
   },
-  filter: 'All',
+  filter: 'All Categories',
 };
 
 const rootReducer = (state = initialState, action) => {

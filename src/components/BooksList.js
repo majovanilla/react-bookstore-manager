@@ -19,7 +19,7 @@ const BooksList = props => {
   const filterBooks = () => {
     const booksArray = Object.values(books);
 
-    if (filter === 'All') {
+    if (filter === 'All Categories') {
       return booksArray;
     }
 

@@ -3,7 +3,7 @@ import PropType from 'prop-types';
 import categories from '../constants';
 
 const myCategories = [...categories];
-myCategories[0] = 'All';
+myCategories[0] = 'All Categories';
 
 const CategoryFilter = props => {
   const { handleFilterChange } = props;
@@ -14,7 +14,7 @@ const CategoryFilter = props => {
   };
 
   return (
-    <select name="category" onChange={onChange}>
+    <select className="category-selector" name="category" onChange={onChange}>
       {
         myCategories.map((category, index) => {
           const categoryKey = `CATEGORY_${index}`;

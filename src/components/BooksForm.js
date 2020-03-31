@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropType from 'prop-types';
 import { createBook } from '../actions';
-import { CATEGORIES as categories } from '../constants';
+import categories from '../constants';
 
 const generateID = () => Math.trunc(Math.random() * 100000000).toString();
 

@@ -1,4 +1,4 @@
-export const CATEGORIES = Object.freeze([
+const CATEGORIES = Object.freeze([
   '',
   'Action',
   'Biography',
@@ -8,3 +8,5 @@ export const CATEGORIES = Object.freeze([
   'Learning',
   'Sci-Fi',
 ]);
+
+export default CATEGORIES;

@@ -8,7 +8,9 @@ import CategoryFilter from './CategoryFilter';
 
 // eslint-disable-next-line react/prop-types
 const BooksList = props => {
-  const { books, filter, removeBook, changeFilter } = props;
+  const {
+    books, filter, removeBook, changeFilter,
+  } = props;
 
   const handleFilterChange = value => {
     changeFilter(value);
@@ -22,7 +24,7 @@ const BooksList = props => {
     }
 
     return booksArray.filter(book => book.category === filter);
-  }
+  };
 
   return (
     <div>

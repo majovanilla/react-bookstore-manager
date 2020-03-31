@@ -1,5 +1,6 @@
 import React from 'react';
-import { CATEGORIES as categories } from '../constants';
+import PropType from 'prop-types';
+import categories from '../constants';
 
 const myCategories = [...categories];
 myCategories[0] = 'All';
@@ -27,6 +28,10 @@ const CategoryFilter = props => {
       }
     </select>
   );
+};
+
+CategoryFilter.propTypes = {
+  handleFilterChange: PropType.func.isRequired,
 };
 
 export default CategoryFilter;

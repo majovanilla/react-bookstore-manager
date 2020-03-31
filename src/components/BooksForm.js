@@ -65,7 +65,7 @@ class BooksForm extends React.Component {
           <label htmlFor="category">
             Category
             :
-            <select name="category" onChange={this.handleChange}>
+            <select className="form-selector" name="category" onChange={this.handleChange}>
               {
                 categories.map((category, index) => {
                   const categoryKey = `CATEGORY_${index}`;

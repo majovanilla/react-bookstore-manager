@@ -1,5 +1,5 @@
 const CATEGORIES = Object.freeze([
-  '',
+  'Select Category',
   'Action',
   'Biography',
   'History',

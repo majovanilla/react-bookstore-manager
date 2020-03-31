@@ -1,4 +1,4 @@
-# React Calculator
+# React Bookstore
 
 > In this project, we built a bookstore manager using React. Magic-books Inc. is a fictional company based in Germany. They have requested our help to build the front-end of an application that will help them organize and manage their bookstore. 
 

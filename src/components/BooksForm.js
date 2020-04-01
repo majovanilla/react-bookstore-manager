@@ -74,7 +74,7 @@ class BooksForm extends React.Component {
               })
             }
           </select>
-          <button type="submit">Submit</button>
+          <button type="submit">Add Book</button>
         </div>
       </form>
     );

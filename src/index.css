@@ -26,7 +26,7 @@ code {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px 116px;
 }
 
 .main-title {
@@ -43,9 +43,8 @@ table thead,
 
 table {
   width: 80%;
-  margin-left: 50px;
+  margin: auto;
   margin-top: 50px;
-  margin-bottom: 150px;
 }
 
 .book-row {
@@ -98,27 +97,21 @@ input {
 }
 
 .books-form {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  padding-left: 70px;
-  padding-bottom: 30px;
-  width: 100vw;
-  background: white;
+  padding: 0 70px 30px;
+  margin: auto;
+  width: 80%;
 }
 
 .books-form-row {
   display: flex;
-  flex-flow: row nowrap;
 }
 
 .books-form-row > * {
-  margin-inline-start: 0.25em;
   margin-inline-end: 3em;
 }
 
 .books-form-row input {
-  margin-left: 10px;
+  width: 50%;
   padding: 5px;
   border-radius: 5px;
   border: solid 1px rgb(169, 169, 169);
@@ -135,5 +128,8 @@ input {
 }
 
 form h2 {
+  font-family: 'Montserrat', sans-serif;
+  border-top: rgba(0, 0, 0, 0.05) solid 2px;
+  padding-top: 10px;
   color:#888888;
 }
